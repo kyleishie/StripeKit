@@ -18,7 +18,7 @@ extension Subscription {
                               daysUntilDue : Int? = nil,
                               metadata : Metadata? = nil,
                               prorate : Bool? = nil,
-//                              var source : ,
+                              source : String? = nil,
                               taxPercent : Double? = nil,
                               trialEnd : Date? = nil,
                               trialFromPlan : Bool? = nil,
@@ -32,6 +32,7 @@ extension Subscription {
         context.daysUntilDue = daysUntilDue
         context.metadata = metadata
         context.prorate = prorate
+        context.source = source
         context.taxPercent = taxPercent
         context.trialEnd = trialEnd
         context.trialFromPlan = trialFromPlan

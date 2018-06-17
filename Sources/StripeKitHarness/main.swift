@@ -65,13 +65,19 @@ do {
 //        })
 //    }
     
-    let customer = try Stripe.default.retrieve(Customer.self, id: "cus_CwIzhsOgtUadUj")!
+    let customer = try Stripe.default.retrieve(Customer.self, id: "cus_D3v55bdTB5qOIj")!
+//    let source = try customer.attachSource("tok_1Ce2oTIDa5BWFSGsS8Lje9XW")
     
+    
+
     if let newProduct = try Product.create(name: "SpecialService", type: .service) {
         if let newPlan = try Plan.create(amount: 2499, currency: .usd, interval: Plan.BillingInterval.month, productId: newProduct.id) {
-            let subscription = try Subscription.create(customer: customer.id, items: [
+            let items = [
                 SubscriptionItemCreationContext(plan: newPlan.id)
-                ])
+            ]
+            let subscription = try Subscription.create(customer: customer.id,
+                                                       items: items,
+                                                       source: "tok_1Ce36vIDa5BWFSGsOGcIgezC")
             
             print(subscription)
         }

@@ -19,7 +19,7 @@ internal struct _SubscriptionCreationContext : Encodable {
     public var daysUntilDue : Int? = nil
     public var metadata : Metadata? = nil
     public var prorate : Bool? = nil
-//    public var source :
+    public var source : String? = nil
     public var taxPercent : Double? = nil
     public var trialEnd : Date? = nil
     public var trialFromPlan : Bool? = nil

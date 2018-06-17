@@ -11,11 +11,11 @@ import RESTClient
 public struct Subscription : Decodable {
     
     public let id : String
-    public let applicationFeePercent : Double
+    public let applicationFeePercent : Double?
     
     public enum Billing : String, Codable {
-        case chargeAutomatically
-        case sendInvoice
+        case chargeAutomatically = "charge_automatically"
+        case sendInvoice = "send_invoice"
     }
     
     public let billing : Billing
@@ -27,7 +27,7 @@ public struct Subscription : Decodable {
     public let currentPeriodEnd : Date
     public let currentPeriodStart : Date
     public let customer : String
-    public let daysUntilDue : Int
+    public let daysUntilDue : Int?
     public let discount : Discount?
     public let endedAt : Date?
     public let livemode : Bool
@@ -46,7 +46,7 @@ public struct Subscription : Decodable {
     
     public let status : Status
     
-    public let taxPercent : Double
+    public let taxPercent : Double?
     public let trialEnd : Date?
     public let trialStart : Date?
     

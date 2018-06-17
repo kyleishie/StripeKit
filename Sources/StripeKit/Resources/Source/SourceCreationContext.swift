@@ -28,6 +28,13 @@ public struct SourceCreationContext : Encodable {
         public var email : String? = nil
         public var name : String? = nil
         public var phone : String? = nil
+        
+        public init(address : Address? = nil, email : String? = nil, name : String? = nil, phone : String? = nil) {
+            self.address = address
+            self.email = email
+            self.name = name
+            self.phone = phone
+        }
     }
     public var owner : Owner? = nil
     
