@@ -70,7 +70,7 @@ public struct Shipping : Codable {
 
 public struct Address : Codable {
     
-    public let line1 : String
+    public let line1 : String? = nil
     public let city : String? = nil
     public let country : String? = nil
     public let line2 : String? = nil
